@@ -11,7 +11,7 @@ const luana = {
     { nome: 'Smartphone', preco: 'R$ 1500' },
   ],
   ativa: true,
-};
+}
 
 const mario = {
   cliente: 'Mario',
@@ -23,28 +23,33 @@ const mario = {
     { nome: 'Guitarra', preco: 'R$ 3500' },
   ],
   ativa: false,
-};
+}
 
 const App = () => {
-  const dados = luana;
+  const dados = luana
 
-  const total = dados.compras.map((item) => Number(item.preco.replace("R$ ", "")))
-  .reduce((a,b) => a + b);
+  const total = dados.compras
+    .map((item) => Number(item.preco.replace('R$ ', '')))
+    .reduce((a, b) => a + b)
 
-  const styleActive = () => dados.ativa ? {color: 'green'} : {color: 'red'}
+  const styleActive = () =>
+    dados.ativa ? { color: 'green' } : { color: 'red' }
 
-  return( 
-  <div>
-    <p>Nome: {dados.cliente}</p>
-    <p>Idade: {dados.idade}</p>
-    <p>
-      Situação:
-      <span style={styleActive(dados.ativa)}> {dados.ativa ? "Ativo": "Inativo"}</span> 
-    </p>
-    <p>Compras: R$ {total}</p>
-    {total > 10000 && <p>Você está gastando demais!</p>}
-  </div>
-  );
-};
+  return (
+    <div>
+      <p>Nome: {dados.cliente}</p>
+      <p>Idade: {dados.idade}</p>
+      <p>
+        Situação:
+        <span style={styleActive(dados.ativa)}>
+          {' '}
+          {dados.ativa ? 'Ativo' : 'Inativo'}
+        </span>
+      </p>
+      <p>Compras: R$ {total}</p>
+      {total > 10000 && <p>Você está gastando demais!</p>}
+    </div>
+  )
+}
 
 export default App
