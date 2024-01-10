@@ -25,7 +25,7 @@ const mario = {
   ativa: false,
 }
 
-const App = () => {
+const Ex1 = () => {
   const dados = luana
 
   const total = dados.compras
@@ -52,4 +52,4 @@ const App = () => {
   )
 }
 
-export default App
+export default Ex1
